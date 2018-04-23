@@ -1,0 +1,45 @@
+.logos {
+    padding: 2.9167rem 15px 5.4167rem 15px;
+    text-align: center;
+    @include atSmall {
+        padding: 2.1875rem 15px 4.0625rem 15px;
+    }
+    &-titulo {
+        font-family: $alt;
+        color: $gray;
+        font-size: 2.5rem;
+        margin-bottom: 4.167rem;
+        @include atSmall {
+            font-size: 1.875rem;
+            margin: 0 auto 3.125rem auto;
+            width: 70%;
+        }
+    }
+    &-lista {
+        text-align: center;
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 3.125rem;
+        }
+    }
+    &-item {
+        margin: 1rem;
+        @include atSmall {
+            margin: 0;
+            width: 10%;
+        }
+        @include atLarge {
+            width: auto;
+        }
+        &:first-child {
+            @include atSmall {
+                width: 7%;
+            }
+            @include atLarge {
+                width: auto;
+            }
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("#searchform").submit(function(ev)
+        {
+            var input = $(".header-buscar-input").val();
+            if(input == "")
+            {
+                $(".alerta-search").removeClass("hidden");
+                ev.preventDefault();
+            }
+            else
+            {
+                if(!$(".alerta-search").hasClass("hidden"))
+                {
+                    $(".alerta-search").addClass("hidden");
+                }
+            }
+        });
+    });
+</script>
+{% end %}
+
+{% block css%}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
+{% end %}
+
+{% block body %}
+    <section class="container articulos">
+        <div class="row">
+          <div class=" articulos-titulo {{editabletext}}" text-id="{{ site.name + 'text_main_article' }}">{{ read_text(site.name +  'text_main_article') }}</div>
+            <div class="col-xs-12">
+                <div class="hidden"></div>
+                {{ getArticleList(tag='novedades') }}
+                {{ getArticleList(tag='novedades2') }}
+                {{ getArticleList(tag='novedades3') }}
+                {{ getArticleList(tag='novedades4') }}
+                {{ getArticleList(tag='novedades5') }}
+                {{ getArticleList(tag='novedades6') }}
+                {{ getArticleList(tag='novedades7') }}
+                {{ getArticleList(tag='novedades8') }}
+                {{ getArticleList(tag='novedades9') }}
+                {{ getArticleList(tag='novedades10') }}
+                {{ getArticleList(tag='novedades11') }}
+            </div>
+        </div>
+    </section>
+{% include ../home/footer.html %}
+{% end %}

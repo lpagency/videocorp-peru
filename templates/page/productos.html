@@ -1,0 +1,115 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css?35">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?35">
+{% end %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart2.config.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#searchform").submit(function(ev)
+            {
+                var input = $(".header-buscar-input").val();
+                if(input == "")
+                {
+                    $(".alerta-search").removeClass("hidden");
+                    ev.preventDefault();
+                }
+                else
+                {
+                    if(!$(".alerta-search").hasClass("hidden"))
+                    {
+                        $(".alerta-search").addClass("hidden");
+                    }
+                }
+                
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var hyper = Utils.getUrlParameter('tag');
+            hyper = hyper.replace("cat1_","");
+            hyper = hyper.replace("cat2_","");
+            hyper = hyper.replace("cat3_","");
+            hyper = hyper.replace("cat4_","");
+            hyper = hyper.replace("_"," ");
+            hyper = hyper.replace("_"," ");
+
+            switch(hyper) 
+            {
+                case "microfonia":
+                    hyper = "microfonía";
+                break;
+
+                case "edicion post produccion":
+                    hyper = "edición y post producción"
+                break;
+
+                case "grabacion":
+                    hyper = "grabación";
+                break;
+
+                case "post produccion":
+                    hyper = "post producción";
+                break;
+
+                case "electricos":
+                    hyper = "eléctricos";
+                break;
+
+                case "carteleria digital":
+                    hyper = "cartelería digital";
+                break;
+
+                case "inalambricos":
+                    hyper = "inalámbricos";
+                break;
+            }
+
+            console.log(hyper);
+
+
+            $(".lista-titulo").html(hyper.toUpperCase());
+        });
+    </script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="container lista">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="lista-titulo lista-titulo-alt"></h3>
+            <div class="products">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% include '../home/footer.html' %}
+
+{% end %}

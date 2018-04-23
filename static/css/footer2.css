@@ -1,0 +1,147 @@
+/*------------- UTILITY CLASSES -------------*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@font-face : {
+  src: url("../../fonts/GillSans-Light.ttf");
+  font-family: "GillSans-Light";
+}
+
+@font-face : {
+  src: url("../../fonts/GillSans-Normal.ttf");
+  font-family: "GillSans-Normal";
+}
+
+@font-face : {
+  src: url("../../fonts/GillSans-SemiBold.ttf");
+  font-family: "GillSans-Semibold";
+}
+
+/*   ***[footer]***   */
+.footer {
+  background-color: #e5e8e8;
+  padding: 5rem 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    text-align: left;
+    padding: 1.25rem 15px 7.6875rem 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-content, .footer-main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.footer-main {
+  margin-top: 3.333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-main {
+    margin-top: 0;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+
+.footer-logo-wrapper {
+  display: inline-block;
+  width: 65.3%;
+  max-width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-logo-wrapper {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer-logo-wrapper {
+    width: 50%;
+  }
+}
+
+.footer-logo {
+  width: 100%;
+  height: auto;
+}
+
+.footer-nav + .footer-nav {
+  margin-top: 3.333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav + .footer-nav {
+    margin-top: 0;
+    margin-left: 2.5rem;
+  }
+}
+
+.footer-nav-titulo {
+  color: #949e9f;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 800;
+  font-size: 1.333rem;
+  line-height: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-titulo {
+    font-size: 1rem;
+    line-height: 1.875rem;
+  }
+}
+
+.footer-menu-item {
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 1.167rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-menu-item {
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+  }
+}
+
+.footer-menu-link:link, .footer-menu-link:hover, .footer-menu-link:visited, .footer-menu-link:focus {
+  color: #949e9f;
+  text-decoration: none;
+  outline: none;
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 0.8333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-social {
+    margin-top: 0.625rem;
+  }
+}
+
+.footer-social-item + .footer-social-item {
+  margin-top: 5px;
+}
+
+/*   ***   /[footer]***   */

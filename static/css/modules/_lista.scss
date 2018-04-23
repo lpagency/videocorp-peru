@@ -1,0 +1,173 @@
+.lista {
+    text-align: center;
+    &-solo {
+        margin-top: 11.25rem;
+        @include atSmall {
+            margin-top: 8.4375rem;
+        }
+    }
+    &-titulo {
+        font-family: $alt;
+        color: $gray;
+        font-size: 2.5rem;
+        margin-bottom: 1.667rem;
+        @include atSmall {
+            font-size: 1.875rem;
+            margin-bottom: 1.25rem;
+        }
+        &-alt {
+            margin: 3.75rem auto 5.4167rem auto;
+            @include atSmall {
+                margin: 2.8125rem auto 4.0625rem auto;
+            }
+        }
+    }
+    &-grupo-wrapper {
+        & + & {
+            margin-top: 4.167rem;
+            @include atSmall {
+                margin-top: 3.125rem;
+            }
+        }
+    }
+    &-grupo {
+        @include atSmall {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+        }
+        &-borde {
+            border: 1px solid $border;
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.8333rem;
+            @include atSmall {
+                margin-bottom: 0.625rem;
+            }
+        }
+        &-titulo {
+            font-family: $alt-semibold;
+            color: $gray;
+            font-size: 1.583rem;
+            font-weight: 700;
+            @include atSmall {
+                font-size: 1.1875rem;
+            }
+        }
+        &-link {
+            font-family: $alt-semibold;
+            color: $brand;
+            font-size: 1.583rem;
+            font-weight: 700;
+            @include linkStates($brand, none);
+            @include atSmall {
+                font-size: 1.1875rem;
+            }
+        }
+    }
+    &-slider {
+        position: relative;
+        &-flecha {
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            cursor: pointer;
+            &-prev {
+                left: -5px;
+                transform: translateY(-50%) scaleX(-1);
+                @include atSmall {
+                    left: -2rem;
+                }
+            }
+            &-next {
+                right: -5px;
+                transform: translateY(-50%);
+                @include atSmall {
+                    right: -2rem;
+                }
+            }
+        }
+    }
+    &-item {
+        padding: 0 2rem;
+        &:focus {
+            outline: none;
+        }
+        &:hover {
+            .lista-item {
+                &-main {
+                    background-color: $bg-dark;
+                }
+                &-cta {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+        @include atSmall {
+            padding: 0;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        @include atMedium {
+            width: 33.33%;
+        }
+        @include atLarge {
+            width: 20%;
+        }
+        &-main {
+            padding: 1.667rem;
+            transition: all .25s;
+            @include atSmall {
+                padding: 1.25rem;
+                flex-grow: 1;
+            }
+        }
+        &-img-wrapper {
+            margin: 0 auto 2.5rem auto;
+            height: 12.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @include atSmall {
+                margin: 0 auto 1.875rem auto;
+            }
+        }
+        &-img {
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto;
+        }
+        &-titulo {
+            font-family: $main;
+            font-weight: 400;
+            color: $black-light;
+            font-size: 1.333rem;
+            margin: 0 auto;
+            @include atSmall {
+                font-size: 1rem;
+            }
+        }
+        &-cta {
+            opacity: 0;
+            transition: all .25s;
+            display: block;
+            background-color: $bg-darker;
+            padding: 0.8333rem;
+            font-size: 1.333rem;
+            font-weight: 400;
+            font-family: $main;
+            pointer-events: none;
+            @include linkStates($black-light, none);
+            @include atSmall {
+                padding: 0.625rem;
+                font-size: 1rem;
+            }
+        }
+    }
+}

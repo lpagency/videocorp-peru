@@ -1,0 +1,245 @@
+<div class="container min hidden-sm">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="header-main">
+                <a href="#" class="header-logo-wrapper">
+                    {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                            <label for="img_header_logo">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" style="width: 20px;">
+                        </div>
+                    {% end %}
+                    <a id="{{ site.name + '_logo' }}" href="#">
+                      <div class="base-logo">
+                         <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_logo',) }}'" class="header-logo" alt="item">
+                        </div>
+                    </a>
+                </a>
+                <div class="header-buscar">
+                  <form id="searchform" class="form-search" role="search" action="{{ site_base }}/productos" method="get">
+                    <input type="text" name="search_query" class="header-buscar-input" placeholder="BUSCA AQUÍ TUS PRODUCTOS" value="{% try %}{{search_query}}{% except %}{% end %}">
+                    <button type="submit" id="send" class="btn-search">
+                      <img src="https://7static.loadingplay.com/static/images/e484eecbdb1844cd651c205a6c63559a_ilupa.png" class="boton-lupa">
+                    </button>
+                  </form>
+                  <h6 class="alerta-search hidden">Este campo no puede estar vacío</h6>
+                </div>
+                <h4 class="header-tel">LLÁMANOS &nbsp;&nbsp;&nbsp;<a href="tel:(+56 2) 2431 6100" class="header-tel-link">(+56 2) 2431 6100</a></h4>
+                <div class="visible-xs header-btn">
+                    <div class="header-btn-linea"></div>
+                    <div class="header-btn-linea"></div>
+                    <div class="header-btn-linea"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container min visible-lg visible-md hidden-sm hidden-xs menu-safari">
+  <nav class="navbar">
+    <div class="container min cont-resp">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar9">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      
+      <div class="brand-centered">
+      <a class="navbar-brand" href="">
+      </a>
+      </div>
+      
+      <div id="navbar9" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <!-- CATEGORIA AUDIO PROFESIONAL -->
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=cat1_audio_profesional'">AUDIO PROFESIONAL</button>
+                <ul class="w3-dropdown-content w3-border dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_parlantes">PARLANTES  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_sistemas_portables">SISTEMAS PORTABLES</a></li>
+                            <li><a href="{{ site_base }}/productos?tag=cat3_instalado">EQUIPAMIENTO INSTALADO</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_microfonia">MICROFONÍA  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_con_cable">MICRÓFONOS CON CABLE</a></li>
+                            <li><a href="{{ site_base }}/productos?tag=cat3_inalambricos">MICRÓFONOS INALÁMBRICOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_audifonos">AUDIFONOS</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_cable_instalacion">CABLE INSTALACIÓN</a></li>
+                </ul>
+          </div>
+          <!-- CATEGORIA VIDEO PROFESIONAL -->
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=cat1_video_profesional'">VIDEO PROFESIONAL</button>
+                <ul class="w3-dropdown-content w3-border dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_camaras_profesionales">CÁMARAS PROFESIONALES</a></li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_edicion_post_produccion">EDICIÓN Y POST PRODUCCIÓN  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_switcher">SWITCHER</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_grabacion">GRABACIÓN</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_convertidores">CONVERTIDORES</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_post_produccion">POST PRODUCCIÓN</a></li>
+                            <li><a href="{{ site_base }}/productos?tag=cat3_streaming">STREAMING</a></li>
+                        </ul>
+                    </li>
+                </ul>
+          </div>
+          <!-- CATEGORIA AUDIOVISUAL -->
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=cat1_audiovisual'">AUDIOVISUAL</button>
+            <ul class="w3-dropdown-content w3-border dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_proyectores">PROYECTORES  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_entrada">ENTRADA</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_escuela_corporativo">ESCUELA Y CORPORATIVO</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_portable">PORTABLE</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_gran_formato">GRAN FORMATO</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_telones">TELONES  <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_manuales">MANUALES</a></li>
+                            <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat3_electricos">ELÉCTRICOS</a></li>
+                        </ul>
+                    </li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_pizarras_interactivas">PIZARRAS INTERACTIVAS</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_tecleras">TECLERAS</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_carteleria_digital">CARTELERÍA DIGITAL</a></li>
+                </ul>
+          </div>
+          <ul class="nav navbar-nav">
+          <li><a href="{{ site_base }}/productos?tag=cat2_promociones" class="text-header">PROMOCIONES</a>
+          </li>
+        </ul>
+          <!-- CATEGORIA NOVEDADES -->
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=cat1_novedades'">NOVEDADES</button>
+            <div class="w3-dropdown-content w3-border">
+             <li class="dropdown-submenu">
+                <li><a tabindex="-1" href="{{ site_base }}/articulos">NOTICIAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_nuevos_lanzamientos">NUEVOS LANZAMIENTOS</a></li>
+              </li>
+            </div>
+          </div>
+          <!-- CATEGORIA MARCAS -->
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=cat1_marcas'">MARCAS</button>
+            <ul class="w3-dropdown-content w3-border dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_bose_pro">BOSE</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_shure">SHURE</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_nec">NEC</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_casio">CASIO</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat2_cat4_black_magic_design">BLACK MAGIC DESIGN</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_sony">SONY</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_grandview">GRANDVIEW</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cat4_gepco">GEPCO</a></li>
+                </ul>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" onclick="window.location.href='{{ site_base }}/contact'">CONTACTO</button>
+          </div>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-toggle="modal" href="#myModal" class="text-header"><i class="fa fa-shopping-cart cart-modal" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  
+  </nav>
+</div>
+
+
+
+<!-- ******************MENU MOVIL*********************** -->
+
+ <!-- Navigation -->
+ <div class="container">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top hidden-md hidden-lg visible-sm visible-xs">
+        <div class="container  header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="">
+                  
+                         {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                            <label for="img_header_logo">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                        </div>
+                    {% end %}
+                    <a id="{{ site.name + '_logo' }}" href="#">
+                      <div class="base-logo">
+                         <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_logo',) }}'" class="header-logo" alt="item">
+                        </div>
+                    </a>
+               
+                     </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-left">
+                <li class="">
+                  <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">AUDIO PROFESIONAL</a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=parlante">PARLANTES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/productos?tag=micro_inalambrico">MICROFONIA</a></li>
+                  </ul>
+                </li>
+                <li class="">
+                  <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">VIDEO PROFESIONAL</a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=camaras_pro">CÁMARAS PROFESIONALES</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=post_produccion">EDICIÓN Y POST PRODUCCIÓN</a></li>
+                  </ul>
+                </li>
+                <li class="">
+                  <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">AUDIOVISUAL</a>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=pizarras">PIZARRAS INTERACTIVAS</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=tecleras">TECLERAS</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=cartelera_digital">CARTELERA DIGITAL</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=telon_electrico">TELONES</a></li>
+                    <li><a tabindex="-1" href="{{ site_base }}/productos?tag=proyectores">PROYECTORES</a></li>
+                  </ul>
+                </li>
+                <li><a href="{{ site_base }}/productos?tag=cat2_promociones" class="text-header">PROMOCIONES</a></li>
+                <li class="">
+                  <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NOVEDADES</a>
+                  <ul class="dropdown-menu">
+                      <li><a tabindex="-1" href="{{ site_base }}/articulos">NOTICIAS</a></li>
+                        <li><a tabindex="-1" href="{{ site_base }}/productos?tag=nuevo">NUEVOS LANZAMIENTOS</a></li>
+                  </ul>
+                </li>
+              <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a></li>
+              <li><a data-toggle="modal" href="#myModal" class="text-header"><i class="fa fa-shopping-cart cart-modal" aria-hidden="true"></i></a></li>
+            </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</div>
+
+

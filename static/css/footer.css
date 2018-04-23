@@ -1,0 +1,252 @@
+/*------------- UTILITY CLASSES -------------*/
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@font-face : {
+  src: url("../../fonts/GillSans-Light.ttf");
+  font-family: "GillSans-Light";
+}
+
+@font-face : {
+  src: url("../../fonts/GillSans-Normal.ttf");
+  font-family: "GillSans-Normal";
+}
+
+@font-face : {
+  src: url("../../fonts/GillSans-SemiBold.ttf");
+  font-family: "GillSans-Semibold";
+}
+
+/*   ***[footer]***   */
+.footer {
+  background-color: #e5e8e8;
+  padding: 5rem 15px;
+  text-align: center;
+}
+
+.footer_1{
+  left: inherit !important;
+  top: 20px;
+}
+
+.firma{
+    position: relative;
+    top: 118px;
+    text-align: center;
+    font-size: 12px;
+}
+.face{
+    width: 54px;
+}
+
+.instagram{
+    width: 34px;
+}
+
+.footer_2{
+  left: inherit !important;
+  top: 50px;
+}
+
+.footer_3_1{
+  right: 850px;
+  left: inherit !important;
+  top: 50px;
+}
+
+.footer_4_1{
+  right: 230px;
+  left: inherit !important;
+  top: 50px;
+}
+
+.banner-footer-logo{
+    position: absolute;
+    top: 0px;
+}
+
+.footer_3{
+  right: 142px;
+  left: inherit !important;
+  top: 20px;
+}
+.footer_4{
+  right: 142px;
+  left: inherit !important;
+  top: 42px;
+}
+.footer_5{
+  right: 142px;
+  left: inherit !important;
+  top: 63px;
+}
+.footer_6{
+  right: 142px;
+  left: inherit !important;
+  top: 84px;
+}
+
+.footer_7{
+  right: 142px;
+  left: inherit !important;
+  top: 103px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    text-align: left;
+    padding: 1.25rem 15px 7.6875rem 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-content, .footer-main {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.footer-main {
+  margin-top: 3.333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-main {
+    left: 550px;
+    margin-top: 0;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+
+.footer-logo-wrapper {
+  display: inline-block;
+  width: 65.3%;
+  max-width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-logo-wrapper {
+    width: 25%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .banner-footer-logo{
+    right: 215px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .footer-logo-wrapper {
+    width: 50%;
+    top: -31px;
+    position: relative;
+  }
+}
+
+.footer-logo {
+    height: 55px;
+    max-width: 250px;
+    width: 250px;
+    object-fit: contain;
+    max-height: 55px;
+    margin-bottom: 30px;
+}
+
+.f-siguenos{
+    left: 200px;
+    position: relative;
+}
+
+.footer-nav + .footer-nav {
+  margin-top: 3.333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav + .footer-nav {
+    margin-top: 0;
+    margin-left: 2.5rem;
+    margin-right: 30px;
+  }
+}
+
+.footer-nav-titulo {
+  color: black;
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 800;
+  font-size: 1.333rem;
+  line-height: 2.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-nav-titulo {
+    font-size: 1rem;
+    line-height: 1.875rem;
+  }
+}
+
+.footer-menu-item {
+  font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 1.167rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-menu-item {
+    color: black;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
+    text-transform: uppercase;
+    max-width: 190px;
+    width: 190px;
+  }
+}
+
+.footer-menu-link:link, .footer-menu-link:hover, .footer-menu-link:visited, .footer-menu-link:focus {
+  color: black;
+  text-decoration: none;
+  outline: none;
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 0.8333rem;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-social {
+    margin-top: 0.625rem;
+  }
+}
+
+.footer-social-item + .footer-social-item {
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 414px){
+  .firma {
+      position: relative;
+      top: 60px;
+      text-align: center;
+      font-size: 12px;
+  }
+
+  .banner-footer-logo{
+    top: inherit;
+    right: inherit;
+  }
+}
+
+/*   ***   /[footer]***   */

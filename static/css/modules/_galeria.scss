@@ -1,0 +1,190 @@
+.galeria {
+    padding-top: 7.9167rem;
+    @include atSmall {
+        padding-top: 5.9375rem;
+    }
+    &-alt {
+        padding-top: 0;
+    }
+    &-titulo {
+        text-align: center;
+        font-family: $alt;
+        color: $black-light;
+        font-size: 2.5rem;
+        margin-bottom: 5.833rem;
+        margin-top: 3.75rem;
+        @include atSmall {
+            font-size: 1.875rem;
+            margin-top: 2.8125rem;
+            margin-bottom: 4.375rem;
+        }
+    }
+    &-grupo {
+        &+& {
+            margin-top: 1.25rem;
+            @include atSmall {
+                margin-top: 0.9375rem;
+            }
+        }
+        @include atSmall {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+        &-tres {
+            .galeria-item {
+                @include atSmall {
+                    width: 33.33%;
+                }
+            }
+        }
+        &-dos {
+            .galeria-item {
+                @include atSmall {
+                    width: 50%;
+                }
+            }
+        }
+    }
+    &-item {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        @include atSmall {
+            height: 15rem;
+        }
+        @include atMedium {
+            height: 18rem;
+        }
+        @include atLarge {
+            height: 21.5625rem;
+        }
+        &+& {
+            margin-top: 1.25rem;
+            @include atSmall {
+                margin-top: 0;
+                margin-left: 0.9375rem;
+            }
+        }
+        &-trigger {
+            cursor: pointer;
+        }
+        &-img {
+            width: 100%;
+            height: auto;
+            @include atSmall {
+                height: 100%;
+                min-width: 100%;
+                width: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &-ancho {
+                @include atSmall {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+    &-popup {
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        pointer-events: none;
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(251, 249, 249, 0.58);
+            opacity: 0;
+            pointer-events: none;
+            transition: all .25s;
+        }
+        &-contenido {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            transform: translateY(-10%);
+            transition: all .25s;
+            opacity: 0;
+            pointer-events: none;
+            margin-top: 8.75rem;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        &-cerrar-wrapper {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: right;
+            z-index: 2;
+            opacity: 0;
+            transition: all .25s;
+            pointer-events: none;
+            @media screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+        &-cerrar {
+            font-family: $alt;
+            color: $black-light;
+            font-size: 3.75rem;
+            cursor: pointer;
+        }
+        &-flecha {
+            height: 5.625rem;
+            position: absolute;
+            top: 50%;
+            cursor: pointer;
+            &-prev {
+                left: 15px;
+                transform: translateY(-50%) scaleX(-1);
+            }
+            &-next {
+                right: 15px;
+                transform: translateY(-50%);
+            }
+        }
+        &-img {
+            width: 75%;
+            height: auto;
+            @include atMedium {
+                height: 70vh;
+                width: auto;
+            }
+        }
+        &-activo {
+            pointer-events: all;
+            &:before {
+                opacity: 1;
+                pointer-events: all;
+            }
+            .galeria-popup {
+                &-cerrar-wrapper {
+                    pointer-events: all;
+                    opacity: 1;
+                }
+                &-contenido {
+                    transform: none;
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+    }
+}

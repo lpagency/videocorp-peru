@@ -1,0 +1,37 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include ../home/header.html %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block css%}
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?35">
+{% end %}
+
+{% block body %}
+<section class="container articulo">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="articulo-titulo">{{ article["title"] }}</h3>
+      <p class="articulo-parrafo">{{ article["caption"] }}</p>
+      <img src="{{ article["thumb_500"] }}" data-original="{{ article["url"] }}" class="articulo-img">
+      <p class="articulo-parrafo">{{ article["description"] }}</p>
+    </div>
+  </div>
+</section>
+{% include ../home/footer.html %}
+{% end %}

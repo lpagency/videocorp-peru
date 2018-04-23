@@ -1,0 +1,48 @@
+.banner {
+    &:focus {
+        outline: none;
+    }
+    &-main {
+        position: relative;
+        &-bg {
+            width: 100%;
+            height: auto;
+            pointer-events: none;
+        }
+    }
+    &-titulo {
+        font-family: $main;
+        font-weight: 300;
+        font-size: 2.5rem;
+        color: $text-black;
+        padding: 1.0833rem 0 0 1.0833rem;
+        @include atSmall {
+            color: $white;
+            padding: 0;
+            position: absolute;
+            bottom: 1.0833rem;
+            left: 1.0833rem;
+            left: 0.8125rem;
+            bottom: 0.8125rem;
+            font-size: 1.875rem;
+        }
+        &-alt {
+            padding: 1.0833rem;
+            @include atSmall {
+                left: 3.125rem;
+                bottom: 1.25rem;
+            }
+        }
+    }
+    &-subtitulo {
+        padding: 1.0833rem 0 0 1.0833rem;
+        font-family: $alt;
+        font-size: 2rem;
+        color: $gray;
+        @include atSmall {
+            padding: 0.8125rem 0 0 0.8125rem;
+            width: 55%;
+            font-size: 1.5rem;
+        }
+    }
+}

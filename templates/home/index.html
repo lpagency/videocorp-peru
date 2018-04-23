@@ -1,0 +1,438 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css?35">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?35">
+{% end %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#searchform").submit(function(ev)
+            {
+                var input = $(".header-buscar-input").val();
+                if(input == "")
+                {
+                    $(".alerta-search").removeClass("hidden");
+                    ev.preventDefault();
+                }
+                else
+                {
+                    if(!$(".alerta-search").hasClass("hidden"))
+                    {
+                        $(".alerta-search").addClass("hidden");
+                    }
+                }
+                
+            });
+        });
+    </script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="container slider con-mobile">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="slider-contenido">
+                    <div class="banner">
+                        <div class="banner-main">
+                            {% if is_admin %}
+                                <div class="image-upload visible-movil">
+                                    <label for="img_header_main_slide">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_slide" name="image" id="img_header_main_slide" >
+                                </div>
+                            {% end %}
+                            <img id="{{ site.name }}_header_main_slide" src="{{ read_image(site.name + '_header_main_slide', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_slide',) }}'" class="banner-main-bg" alt="item">
+                            <div class=" banner-titulo banner-titulo-alt {{editabletext}}" text-id="{{ site.name + 'text_main_slide' }}">{{ read_text(site.name +  'text_main_slide') }}</div>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <div class="banner-main">
+                            {% if is_admin %}
+                                <div class="image-upload visible-movil">
+                                    <label for="img_header_main_slide_2">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_slide_2" name="image" id="img_header_main_slide_2" >
+                                </div>
+                            {% end %}
+                            <img id="{{ site.name }}_header_main_slide_2" src="{{ read_image(site.name + '_header_main_slide_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_slide_2',) }}'" class="banner-main-bg" alt="item">
+                            <div class=" banner-titulo banner-titulo-alt {{editabletext}}" text-id="{{ site.name + 'text_main_slide_2' }}">{{ read_text(site.name +  'text_main_slide_2') }}</div>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <div class="banner-main">
+                            {% if is_admin %}
+                                <div class="image-upload visible-movil">
+                                    <label for="img_header_main_slide_3">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_slide_3" name="image" id="img_header_main_slide_3" >
+                                </div>
+                            {% end %}
+                            <img id="{{ site.name }}_header_main_slide_3" src="{{ read_image(site.name + '_header_main_slide_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_slide_3',) }}'" class="banner-main-bg" alt="item">
+                            <div class=" banner-titulo banner-titulo-alt {{editabletext}}" text-id="{{ site.name + 'text_main_slide_3' }}">{{ read_text(site.name +  'text_main_slide_3') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container logos">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="logos-copy">
+                    <div class=" logos-titulo {{editabletext}}" text-id="{{ site.name + 'text_main_banner' }}">{{ read_text(site.name +  'text_main_banner') }}</div>
+                </div>
+                <div class="logos-lista visible-xs">
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable visible-movil">
+                                <label for="img_header_main_brand">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand" name="image" id="img_header_main_brand" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand" src="{{ read_image(site.name + '_header_main_brand', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-2 visible-movil">
+                                <label for="img_header_main_brand_2">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_2" name="image" id="img_header_main_brand_2" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_2" src="{{ read_image(site.name + '_header_main_brand_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_2',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-3 visible-movil">
+                                <label for="img_header_main_brand_3">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_3" name="image" id="img_header_main_brand_3" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_3" src="{{ read_image(site.name + '_header_main_brand_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_3',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-4 visible-movil">
+                                <label for="img_header_main_brand_4">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_4" name="image" id="img_header_main_brand_4" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_4" src="{{ read_image(site.name + '_header_main_brand_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_4',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-5 visible-movil">
+                                <label for="img_header_main_brand_5">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_5" name="image" id="img_header_main_brand_5" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_5" src="{{ read_image(site.name + '_header_main_brand_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_5',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-6 visible-movil">
+                                <label for="img_header_main_brand_6">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_6" name="image" id="img_header_main_brand_6" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_6" src="{{ read_image(site.name + '_header_main_brand_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_6',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-7 visible-movil">
+                                <label for="img_header_main_brand_7">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_7" name="image" id="img_header_main_brand_7" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_7" src="{{ read_image(site.name + '_header_main_brand_7', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_7',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-8 visible-movil">
+                                <label for="img_header_main_brand_8">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_8" name="image" id="img_header_main_brand_8" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_8" src="{{ read_image(site.name + '_header_main_brand_8', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_8',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div class="col-xs-4 logo-mobile-xs">
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-9 visible-movil">
+                                <label for="img_header_main_brand_9">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_9" name="image" id="img_header_main_brand_9" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_9" src="{{ read_image(site.name + '_header_main_brand_9', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_9',) }}'" class="logos-item" alt="item">
+                    </div>
+                </div>
+                <div class="owl-carousel logos-lista hidden-xs">
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable visible-movil">
+                                <label for="img_header_main_brand">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand" name="image" id="img_header_main_brand" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand" src="{{ read_image(site.name + '_header_main_brand', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-2 visible-movil">
+                                <label for="img_header_main_brand_2">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_2" name="image" id="img_header_main_brand_2" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_2" src="{{ read_image(site.name + '_header_main_brand_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_2',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-3 visible-movil">
+                                <label for="img_header_main_brand_3">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_3" name="image" id="img_header_main_brand_3" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_3" src="{{ read_image(site.name + '_header_main_brand_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_3',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-4 visible-movil">
+                                <label for="img_header_main_brand_4">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_4" name="image" id="img_header_main_brand_4" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_4" src="{{ read_image(site.name + '_header_main_brand_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_4',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-5 visible-movil">
+                                <label for="img_header_main_brand_5">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_5" name="image" id="img_header_main_brand_5" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_5" src="{{ read_image(site.name + '_header_main_brand_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_5',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-6 visible-movil">
+                                <label for="img_header_main_brand_6">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_6" name="image" id="img_header_main_brand_6" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_6" src="{{ read_image(site.name + '_header_main_brand_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_6',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-7 visible-movil">
+                                <label for="img_header_main_brand_7">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_7" name="image" id="img_header_main_brand_7" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_7" src="{{ read_image(site.name + '_header_main_brand_7', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_7',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-8 visible-movil">
+                                <label for="img_header_main_brand_8">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_8" name="image" id="img_header_main_brand_8" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_8" src="{{ read_image(site.name + '_header_main_brand_8', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_8',) }}'" class="logos-item" alt="item">
+                    </div>
+                    <div>
+                        {% if is_admin %}
+                            <div class="image-upload logo-editable logo-9 visible-movil">
+                                <label for="img_header_main_brand_9">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_brand_9" name="image" id="img_header_main_brand_9" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_header_main_brand_9" src="{{ read_image(site.name + '_header_main_brand_9', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_brand_9',) }}'" class="logos-item" alt="item">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container galeria galeria-alt">
+      <div class="row">
+        <div class="col-md-12 col-xs-12">
+          <div class="col-md-12 sin-padding">
+            <div class="col-md-4 col-sm-4 padding-l">
+              <a id="{{ site.name + '_banner_1' }}" href="{{ read_link(site.name + '_banner_1') }}" class="lineas-menu-link">
+                <div class="container-h homi">
+                  <div class="galeria-item">
+                    {% if is_admin %}
+                      <div class="image-upload logo-editable visible-movil">
+                        <label for="img_header_main_img">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_img" name="image" id="img_header_main_img" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_header_main_img" src="{{ read_image(site.name + '_header_main_img', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_img',) }}'" class="galeria-item-img" alt="item">
+                  </div>
+                  <div class="overlay homi">
+                    <div class=" banner-titulo banner-abajo banner-titulo-alt banner-titulo-mobile {{editabletext}}" text-id="{{ site.name + 'text_banner_bajo_1' }}">{{ read_text(site.name +  'text_banner_bajo_1') }}</div>
+                  </div>
+                </div>
+              </a>
+              {% if is_admin %}
+                <img class= "change-image editablelink _banner_1" link-id="{{ site.name + '_banner_1' }}" content="{{ read_link(site.name + '_banner_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 15px;">
+              {% end %}
+            </div>
+            <div class="col-md-4 col-sm-4 sin-padding mobil-padding">
+              <a id="{{ site.name + '_banner_2' }}" href="{{ read_link(site.name + '_banner_2') }}" class="lineas-menu-link">
+                <div class="container-h homi">
+                  <div class="galeria-item">
+                    {% if is_admin %}
+                      <div class="image-upload logo-editable visible-movil">
+                        <label for="img_header_main_img_2">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_img_2" name="image" id="img_header_main_img_2" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_header_main_img_2" src="{{ read_image(site.name + '_header_main_img_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_img_2',) }}'" class="galeria-item-img" alt="item">
+                  </div>
+                  <div class="overlay homi2">
+                    <div class=" banner-titulo banner-abajo banner-titulo-alt banner-titulo-mobile {{editabletext}}" text-id="{{ site.name + 'text_banner_bajo_2' }}">{{ read_text(site.name +  'text_banner_bajo_2') }}</div>
+                  </div>
+                </div>
+              </a>
+              {% if is_admin %}
+                <img class= "change-image editablelink _banner_1" link-id="{{ site.name + '_banner_2' }}" content="{{ read_link(site.name + '_banner_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 15px;">
+              {% end %}
+            </div>
+            <div class="col-md-4 col-sm-4 padding-r mobil-padding-2">
+              <a id="{{ site.name + '_banner_3' }}" href="{{ read_link(site.name + '_banner_3') }}" class="lineas-menu-link">
+                <div class="container-h homi">
+                  <div class="galeria-item">
+                    {% if is_admin %}
+                      <div class="image-upload logo-editable visible-movil">
+                        <label for="img_header_main_img_3">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_img_3" name="image" id="img_header_main_img_3" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_header_main_img_3" src="{{ read_image(site.name + '_header_main_img_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_img_3',) }}'" class="galeria-item-img" alt="item">
+                  </div>
+                  <div class="overlay homi3">
+                    <div class=" banner-titulo banner-abajo banner-titulo-alt banner-titulo-mobile {{editabletext}}" text-id="{{ site.name + 'text_banner_bajo_2' }}">{{ read_text(site.name +  'text_banner_bajo_2') }}</div>
+                  </div>
+                </div>
+              </a>
+              {% if is_admin %}
+                <img class= "change-image editablelink _banner_1" link-id="{{ site.name + '_banner_3' }}" content="{{ read_link(site.name + '_banner_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 15px;">
+              {% end %}
+            </div>
+        </div>
+        <div class="clearfix clear-bottom" style="padding-bottom: 50px"></div>
+        <div class="col-md-12 sin-padding">
+          <div class="col-md-6 col-sm-6 padding-l">
+            <a id="{{ site.name + '_banner_4' }}" href="{{ read_link(site.name + '_banner_4') }}" class="lineas-menu-link-l">
+              <div class="container-h homi-l">
+                <div class="galeria-item galeria-item-l large-img">
+                  {% if is_admin %}
+                    <div class="image-upload logo-editable visible-movil">
+                      <label for="img_header_main_img_4">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                      </label>
+                      <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_main_img_4" name="image" id="img_header_main_img_4" >
+                    </div>
+                  {% end %}
+                  <img id="{{ site.name }}_header_main_img_4" src="{{ read_image(site.name + '_header_main_img_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_main_img_4',) }}'" class="galeria-item-img" alt="item">
+                </div>
+                <div class="overlay homi4">
+                  <div class=" banner-titulo banner-abajo banner-titulo-alt banner-titulo-mobile banner-titulo-mobile-2 {{editabletext}}" text-id="{{ site.name + 'text_banner_bajo_2' }}">{{ read_text(site.name +  'text_banner_bajo_2') }}</div>
+                </div>
+              </div>
+            </a>
+            {% if is_admin %}
+              <img class= "change-image editablelink _banner_1" link-id="{{ site.name + '_banner_4' }}" content="{{ read_link(site.name + '_banner_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+            {% end %}
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12 padding-r">
+            <div class="galeria-item large-img mobile-video" style="background-color: black;">
+                <iframe src="https://player.vimeo.com/video/253506197" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container lista lista-solo">
+        <div class="row">
+            <div class="col-xs-12 resp-prod">
+                <div class=" lista-titulo {{editabletext}}" text-id="{{ site.name + 'text_main_slide_32' }}">{{ read_text(site.name +  'text_main_slide_32') }}</div>
+                <div class="lista-slider products">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include '../home/footer.html' %}
+
+{% end %}

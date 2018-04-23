@@ -1,0 +1,33 @@
+.slider {
+    &-contenido {
+        position: relative;
+    }
+    &-flecha {
+        position: absolute;
+        z-index: 2;
+        cursor: pointer;
+        top: 5.5vw;
+        opacity: 0.5;
+        transition: all .25s;
+        @include atSmall {
+            top: 50%;
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &-prev {
+            left: 1rem;
+            transform: translateY(5.5vw) scaleX(-1);
+            @include atSmall {
+                transform: translateY(-50%) scaleX(-1);
+            }
+        }
+        &-next {
+            right: 1rem;
+            transform: translateY(5.5vw);
+            @include atSmall {
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

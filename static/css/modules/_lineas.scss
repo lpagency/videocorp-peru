@@ -1,0 +1,102 @@
+.lineas {
+    margin-top: 9.167rem;
+    @include atSmall {
+        margin-top: 6.875rem;
+    }
+    &-alt {
+        margin-top: 7.0833rem;
+        @include atSmall {
+            margin-top: 5.3125rem;
+        }
+    }
+    &-peq {
+        margin-top: 3.75rem;
+        @include atSmall {
+            margin-top: 2.8125rem;
+        }
+        .lineas-listas {
+            padding-bottom: 7.083rem;
+            @include atSmall {
+                padding-bottom: 5.3125rem;
+            }
+        }
+    }
+    &-header {
+        text-align: center;
+        &-title {
+            font-family: $alt;
+            color: $gray;
+            font-size: 2.5rem;
+            line-height: 2rem;
+            @include atSmall {
+                font-size: 1.875rem;
+                line-height: 1.5rem;
+            }
+        }
+        &-subtitle {
+            font-family: $alt-normal;
+            color: $gray;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            @include atSmall {
+                font-size: 1.125rem;
+                line-height: 1.5rem;
+            }
+        }
+    }
+    &-listas {
+        padding: 3.333rem 0 10.8333rem 0;
+        @include atSmall {
+            padding: 2.5rem 0 8.125rem 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &-nav {
+        text-align: center;
+        @include atSmall {
+            text-align: left;
+        }
+        & + & {
+            margin-top: 1.333rem;
+            @include atSmall {
+                margin-top: 0;
+            }
+        }
+        &-titulo {
+            font-family: $main;
+            font-weight: 800;
+            font-size: 1.167rem;
+            line-height: 2.25rem;
+            color: $black-light;
+            @include atSmall {
+                font-size: 0.75rem;
+                line-height: 1.25rem;
+            }
+            @include atMedium {
+                font-size: 0.875rem;
+                line-height: 1.6875rem;
+            }
+        }
+    }
+    &-menu {
+        &-item {
+            font-family: $main;
+            font-weight: 400;
+            font-size: 1.167rem;
+            line-height: 2.25rem;
+            @include atSmall {
+                font-size: 0.75rem;
+                line-height: 1.25rem;
+            }
+            @include atMedium {
+                font-size: 0.875rem;
+                line-height: 1.6875rem;
+            }
+        }
+        &-link {
+            @include linkStates($black-light, none);
+        }
+    }
+}

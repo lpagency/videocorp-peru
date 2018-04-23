@@ -1,0 +1,95 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css?35">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css?35">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?35">
+{% end %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.categ.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("#searchform").submit(function(ev)
+            {
+                var input = $(".header-buscar-input").val();
+                if(input == "")
+                {
+                    $(".alerta-search").removeClass("hidden");
+                    ev.preventDefault();
+                }
+                else
+                {
+                    if(!$(".alerta-search").hasClass("hidden"))
+                    {
+                        $(".alerta-search").addClass("hidden");
+                    }
+                }
+            });
+        });
+    </script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="container lista">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class=" lista-titulo lista-titulo-alt {{editabletext}}" text-id="{{ site.name + 'text_main_categ' }}">{{ read_text(site.name +  'text_main_categ') }}</div>
+                <div class="lista-grupo-wrapper">
+                    <div class="lista-grupo-header">
+                        <h4 class="lista-grupo-titulo">Audio profesional</h4>
+                        <a href="{{ site_base }}/productos?tag=audio_profesional" class="lista-grupo-link">Ver todos</a>
+                    </div>
+                    <div class="lista-grupo lista-grupo-borde products-pro">
+                    </div>
+                </div>
+                <div class="lista-grupo-wrapper">
+                    <div class="lista-grupo-header">
+                        <h4 class="lista-grupo-titulo">Video profesional</h4>
+                        <a href="{{ site_base }}/productos?tag=educacion" class="lista-grupo-link">Ver todos</a>
+                    </div>
+                    <div class="lista-grupo lista-grupo-borde products-ed">
+                    </div>
+                </div>
+                <div class="lista-grupo-wrapper">
+                    <div class="lista-grupo-header">
+                        <h4 class="lista-grupo-titulo">Audiovisual</h4>
+                        <a href="{{ site_base }}/productos?tag=audiovisual" class="lista-grupo-link">Ver todos</a>
+                    </div>
+                    <div class="lista-grupo lista-grupo-borde products-audio">
+                    </div>
+                </div>
+                <!-- <div class="lista-grupo-wrapper">
+                    <div class="lista-grupo-header">
+                        <h4 class="lista-grupo-titulo">Accesorios</h4>
+                        <a href="{{ site_base }}/productos?tag=accesorios" class="lista-grupo-link">Ver todos</a>
+                    </div>
+                    <div class="lista-grupo lista-grupo-borde products-ac">
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+{% include '../home/footer.html' %}
+
+{% end %}

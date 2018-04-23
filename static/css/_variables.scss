@@ -1,0 +1,41 @@
+// Font imports and stacks
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+@font-face: {
+    src: url("../../fonts/GillSans-Light.ttf");
+    font-family: "GillSans-Light";
+}
+@font-face: {
+    src: url("../../fonts/GillSans-Normal.ttf");
+    font-family: "GillSans-Normal";
+}
+@font-face: {
+    src: url("../../fonts/GillSans-SemiBold.ttf");
+    font-family: "GillSans-Semibold";
+}
+$main: "Open Sans", "Helvetica", "Arial", sans-serif;
+//$alt: "GillSans-Light", "Helvetica", sans-serif;
+$alt: "Open Sans", "Helvetica", "Arial", sans-serif;
+//$alt-normal: "GillSans-Normal", "Helvetica", sans-serif;
+$alt-normal: "Open Sans", "Helvetica", "Arial", sans-serif;
+//$alt-semibold: "GillSans-SemiBold", "Helvetica", sans-serif;
+$alt-semibold: "Open Sans", "Helvetica", "Arial", sans-serif;
+
+
+// Colors
+$gray: #919190;
+$gray-dark: #70706f;
+$gray-light: #aeaeab;
+
+$black: #000000;
+$black-light: #414242;
+$text-black: #373838;
+
+$bg: #e5e8e8;
+$bg-dark: #dfdfdf;
+$bg-darker: #c4c4c4;
+$text-bg: #949e9f;
+
+$border: #807a75;
+$white: #fcfcfa;
+$brand: #032e5a;
+$accent: #701a7c;

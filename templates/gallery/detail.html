@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+    {{ site.name }}
+{% end %}
+
+{% block css %}
+    <link href="{{ site_base }}/static/js/lightGallery/dist/css/lightgallery.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
+{% end %}
+
+{% block javascript %}
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/dist/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="{{ site_base }}/static/js/lightGallery/dist/js/lightgallery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $("a#single_image").fancybox();
+            $('.fancybox').fancybox();
+            $("#lightgallery").lightGallery(
+                {
+                    cssEasing: 'cubic-bezier(0.250, 0.100, 0.250, 1.000)'
+                });
+            $("#home").css("text-align", "left");
+        });
+    </script>
+{% end %}
+
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+    <div id="wrap" class="container galeria galeria-alt">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="galeria-titulo">
+                    {{ gallery.title }}
+                </h3>
+            </div>
+            <div class="col-xs-12">
+                <ul id="lightgallery" class="list-unstyled row" >
+                    {% for i in gallery.getImageList() %}
+                        <li class="galeria-grupo galeria-grupo-tres col-md-4" data-responsive="{{ i["thumb_200"] }},{{ i["thumb_500"] }}" data-src="{{ i["thumb_500"] }}" data-sub-html="">
+                            <a href="">
+                                <img class="img-responsive img-gallery mover" src="{{ i["thumb_500"] }}">
+                            </a>
+                        </li>
+                    {% end %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,136 @@
+.producto {
+    &-main {
+        margin: 2.5rem 0 7.5rem 0;
+        @include atSmall {
+            margin: 5.625rem 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+    }
+    &-preview {
+        margin-bottom: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        @include atSmall {
+            margin-bottom: 0;
+            margin-right: 2.5rem;
+            width: 60%;
+        }
+        @include atMedium {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-right: 5rem;
+        }
+        &-lista {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            order: 2;
+            margin-top: 1rem;
+            @include atSmall {
+                width: 100%;
+            }
+            @include atMedium {
+                margin-top: 0;
+                order: 1;
+                display: block;
+                width: 10%;
+            }
+        }
+        &-item {
+            width: 15%;
+            height: auto;
+            cursor: pointer;
+            @include atMedium {
+                width: 100%;
+            }
+            &+& {
+                margin-left: 1.5rem;
+                @include atMedium {
+                    margin-left: 0;
+                    margin-top: 1.875rem;
+                }
+            }
+        }
+        &-img {
+            width: 100%;
+            order: 1;
+            @include atSmall {
+                width: calc(90% - 3.125rem);
+                max-width: 512px;
+            }
+            @include atMedium {
+                order: 2;
+            }
+        }
+    }
+    &-intro {
+        @include atSmall {
+            width: 40%;
+        }
+    }
+    &-descripcion {
+        margin-bottom: 8.333rem;
+        @include atSmall {
+            margin-bottom: 6.25rem;
+            padding-left: 2.5rem;
+        }
+    }
+    &-parrafo {
+        font-size: 1.333rem;
+        color: $text-black;
+        font-family: $main;
+        font-weight: 400;
+        @include atSmall {
+            font-size: 1rem;
+        }
+        &+& {
+            margin-top: 1.333rem;
+            @include atSmall {
+                margin-top: 1rem;
+            }
+        }
+        &.producto-ficha {
+            display: inline-block;
+            margin-top: 4.167rem;
+            @include atSmall {
+                margin-top: 3.125rem;
+            }
+        }
+        &-link {
+            @include linkStates($text-black, underline);
+        }
+    }
+    &-titulo {
+        color: $black-light;
+        font-family: $main;
+        font-weight: 400;
+        font-size: 2.5rem;
+        @include atSmall {
+            font-size: 1.875rem;
+        }
+    }
+    &-subtitulo {
+        color: $gray-dark;
+        font-family: $main;
+        font-weight: 400;
+        font-size: 1.333rem;
+        @include atSmall {
+            font-size: 1rem;
+        }
+    }
+    &-precio {
+        color: $black-light;
+        font-size: 2rem;
+        font-weight: 400;
+        font-family: $main;
+        margin: 2.0833rem 0;
+        @include atSmall {
+            font-size: 1.5rem;
+            margin: 1.5625rem 0;
+        }
+    }
+}

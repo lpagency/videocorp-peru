@@ -1,0 +1,221 @@
+@import "../_utilities";
+@import "../_variables";
+
+/*   ***[header]***   */
+.header {
+    padding: 5px 15px 0 15px;
+    &-main {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include atSmall {
+            flex-wrap: nowrap;
+        }
+    }
+    &-logo-wrapper {
+        display: inline-block;
+        width: 60%;
+        max-width: 250px;
+        height: auto;
+        order: 1;
+        @include atSmall {
+            width: 25%;
+        }
+        @include atMedium {
+            width: 50%;
+        }
+    }
+    &-logo {
+        width: 100%;
+        height: auto;
+    }
+    &-buscar {
+        width: 100%;
+        order: 3;
+        position: relative;
+        margin: 0.8333rem 0;
+        @include atSmall {
+            order: 2;
+            margin: 0;
+            width: 33.33%;
+            margin: 0 1rem;
+        }
+        @include atMedium {
+            margin: 0 4rem;
+            width: 60%;
+        }
+        @include atLarge {
+            margin: 0 6.875rem;
+        }
+        &-icono {
+            position: absolute;
+            top: 50%;
+            left: 12px;
+            transform: translateY(-50%);
+            pointer-events: none;
+            @include atSmall {
+                left: 10px;
+            }
+        }
+        &-input {
+            width: 100%;
+            height: 3.333rem;
+            border-radius: 7px;
+            border: 1px solid $border;
+            padding: 0 2.9167rem;
+            font-family: $main;
+            font-weight: 600;
+            font-size: 1rem;
+            color: $gray-light;
+            @include atSmall {
+                height: 2.5rem;
+                padding: 0 2.1875rem;
+                font-size: 0.75rem;
+            }
+            &::placeholder {
+                color: $gray-light;
+            }
+        }
+    }
+    &-tel {
+        order: 4;
+        font-family: $main;
+        font-weight: 400;
+        font-size: 1.333rem;
+        color: $brand;
+        @include atSmall {
+            text-align: right;
+            order: 3;
+            font-size: 1rem;
+            width: auto;
+            white-space: pre;
+        }
+        &-link {
+            @include linkStates($brand, none);
+        }
+    }
+    &-btn {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+        order: 2;
+        width: 2rem;
+        height: auto;
+        &-linea {
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+            background-color: $brand;
+            &+& {
+                margin-top: 4px;
+            }
+        }
+    }
+    &-nav {
+        border-top: 1px solid $border;
+        padding: 0.833rem 0;
+        margin-top: 0.833rem;
+        @include atSmall {
+            padding: 0.625rem 0;
+            margin-top: 0.625rem;
+        }
+    }
+    &-menu {
+        text-align: center;
+        padding: 1rem 0;
+        display: none;
+        @include atSmall {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+        }
+        &-item {
+            font-family: $alt;
+            font-size: 1.167rem;
+            position: relative;
+            @include atSmall {
+                font-size: 0.875rem;
+            }
+            &-expander {
+                @include atSmall {
+                    flex-grow: 1;
+                }
+            }
+            &+& {
+                margin-top: 1rem;
+                @include atSmall {
+                    margin-top: 0;
+                    margin-left: 1rem;
+                }
+                @include atMedium {
+                    margin-left: 2.1875rem;
+                }
+            }
+        }
+        &-link {
+            @include linkStates($gray-dark, none);
+            &-acento {
+                font-weight: 600;
+                @include linkStates($accent, none);
+            }
+        }
+    }
+    &-submenu-wrapper {
+        position: relative;
+        @include atSmall {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            padding-top: 1.5rem;
+            min-width: 100%;
+        }
+    }
+    &-submenu {
+        margin: 1rem 0;
+        display: none;
+        @include atSmall {
+            background-color: rgba(255, 255, 255, 0.612);
+            margin: 0;
+            padding: 15px 0;
+            text-align: left;
+        }
+        &-icono {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, calc(100% + 0.25rem));
+            display: none;
+            height: 0.5625rem;
+            width: 0.6875rem;
+        }
+        &-item {
+            font-family: $main;
+            font-weight: 600;
+            font-size: 1.0833rem;
+            line-height: 2rem;
+            display: block;
+            @include atSmall {
+                font-size: 0.8125rem;
+                line-height: 1.5rem;
+                width: 100%;
+            }
+            &+& {
+                margin-top: 5px;
+            }
+        }
+        &-link {
+            padding: 0 1.4375rem;
+            display: block;
+            white-space: pre;
+            @include linkStates($gray-dark, none);
+        }
+    }
+}
+/*   ***   /[header]***   */
